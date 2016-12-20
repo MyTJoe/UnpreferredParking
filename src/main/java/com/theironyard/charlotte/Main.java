@@ -1,10 +1,17 @@
 package com.theironyard.charlotte;
 
+import spark.Spark;
+
 import java.util.ArrayList;
+
+import static spark.Spark.before;
 
 public class Main {
 
     public static void main(String[] args) {
-//        private ArrayList<UpdateLot>
+        Spark.get("/", ((request, response) -> "Hello World!"));
+        before((request, response) -> {
+            response.header("Access-Control-Allow-Origin", "*");
+        });
     }
 }
