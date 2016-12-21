@@ -3,7 +3,7 @@ package com.theironyard.charlotte;
 public class UpdateCar {
     private String make;
     private String model;
-    private int size;
+    private double size;
     private double money;
 
     public String getMake() {
@@ -22,11 +22,11 @@ public class UpdateCar {
         this.model = model;
     }
 
-    public int getSize() {
+    public double getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(double size) {
         this.size = size;
     }
 

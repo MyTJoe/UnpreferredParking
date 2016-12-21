@@ -1,11 +1,11 @@
 package com.theironyard.charlotte;
 
-public class UpdateLot {
+public class Lot {
     private int iD;
     private double capacity;
     private double rate;
 
-    public UpdateLot(int iD, double capacity, double rate) {
+    public Lot(int iD, double capacity, double rate) {
         this.iD = iD;
         this.capacity = capacity;
         this.rate = rate;
