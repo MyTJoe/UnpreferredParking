@@ -1,12 +1,17 @@
 package com.theironyard.charlotte;
 
+import java.util.ArrayList;
+
 public class Lot {
     private int iD;
+    private String currentCars;
     private double capacity;
     private double rate;
+    private static ArrayList<Car> addCar = new ArrayList();
 
-    public Lot(int iD, double capacity, double rate) {
+    public Lot(int iD, String currentCars, double capacity, double rate) {
         this.iD = iD;
+        this.currentCars = currentCars;
         this.capacity = capacity;
         this.rate = rate;
     }
@@ -17,6 +22,14 @@ public class Lot {
 
     public void setiD(int iD) {
         this.iD = iD;
+    }
+
+    public String getCurrentCars() {
+        return currentCars;
+    }
+
+    public void setCurrentCars(String currentCars) {
+        this.currentCars = currentCars;
     }
 
     public double getCapacity() {
