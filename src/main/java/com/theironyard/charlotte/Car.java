@@ -1,10 +1,19 @@
 package com.theironyard.charlotte;
 
-public class UpdateCar {
+public class Car {
     private String make;
     private String model;
-    private double size;
+    private int size;
     private double money;
+    private int iD;
+
+    public Car(String make, String model, int size, double money, int iD) {
+        this.make = make;
+        this.model = model;
+        this.size = size;
+        this.money = money;
+        this.iD = iD;
+    }
 
     public String getMake() {
         return make;
@@ -22,11 +31,11 @@ public class UpdateCar {
         this.model = model;
     }
 
-    public double getSize() {
+    public int getSize() {
         return size;
     }
 
-    public void setSize(double size) {
+    public void setSize(int size) {
         this.size = size;
     }
 
@@ -36,5 +45,13 @@ public class UpdateCar {
 
     public void setMoney(double money) {
         this.money = money;
+    }
+
+    public int getiD() {
+        return iD;
+    }
+
+    public void setiD(int iD) {
+        this.iD = iD;
     }
 }
