@@ -12,6 +12,7 @@ public class Main {
     private static JsonParser parser = new JsonParser();
     private static JsonSerializer serializer = new JsonSerializer();
 
+
     public static void main(String[] args) {
         lotInfo.add(new Lot(0, 20, 5, new ArrayList<>()));
         lotInfo.add(new Lot(1,18, 6, new ArrayList<>()));
@@ -36,6 +37,7 @@ public class Main {
         Spark.post("/park-car", (request, response) -> {
             System.out.println("Updating lot.");
             Car addCar = parser.parse(request.body(), Car.class);
+
             return "";
         });
     }
