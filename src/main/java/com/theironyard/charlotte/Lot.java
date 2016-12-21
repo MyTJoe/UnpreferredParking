@@ -38,4 +38,12 @@ public class Lot {
     public void setRate(double rate) {
         this.rate = rate;
     }
+
+    public ArrayList<Car> getAddCar() {
+        return addCar;
+    }
+
+    public void setAddCar(ArrayList<Car> addCar) {
+        this.addCar = addCar;
+    }
 }
