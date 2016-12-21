@@ -13,10 +13,10 @@ public class Main {
     private static JsonSerializer serializer = new JsonSerializer();
 
     public static void main(String[] args) {
-        lotInfo.add(new Lot(0, 20, 5, null));
-        lotInfo.add(new Lot(1,18, 6, null));
-        lotInfo.add(new Lot(2,  15, 5, null));
-        lotInfo.add(new Lot(3, 15,6,null));
+        lotInfo.add(new Lot(0, 20, 5, new ArrayList<>()));
+        lotInfo.add(new Lot(1,18, 6, new ArrayList<>()));
+        lotInfo.add(new Lot(2,  15, 5, new ArrayList<>()));
+        lotInfo.add(new Lot(3, 15,6, new ArrayList<>()));
 
         String port = System.getenv("PORT");
 
