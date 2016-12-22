@@ -3,31 +3,31 @@ package com.theironyard.charlotte;
 import java.util.ArrayList;
 
 public class Lot {
-    private int iD;
-    private double capacity;
-    private double rate;
-    ArrayList<Car> addCar = new ArrayList();
+    private int Id;
+    private int capacity;
+    private int rate;
+    private ArrayList<Car> cars = new ArrayList();
 
-    public Lot(int iD, double capacity, double rate, ArrayList<Car> addCar) {
-        this.iD = iD;
+    public Lot(int Id, int capacity, int rate, ArrayList<Car> cars) {
+        this.Id = Id;
         this.capacity = capacity;
         this.rate = rate;
-        this.addCar = addCar;
+        this.cars = cars;
     }
 
-    public int getiD() {
-        return iD;
+    public int getId() {
+        return Id;
     }
 
-    public void setiD(int iD) {
-        this.iD = iD;
+    public void setId(int id) {
+        this.Id = id;
     }
 
-    public double getCapacity() {
+    public int getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(double capacity) {
+    public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
 
@@ -35,15 +35,15 @@ public class Lot {
         return rate;
     }
 
-    public void setRate(double rate) {
+    public void setRate(int rate) {
         this.rate = rate;
     }
 
-    public ArrayList<Car> getAddCar() {
-        return addCar;
+    public ArrayList<Car> getCars() {
+        return cars;
     }
 
-    public void setAddCar(ArrayList<Car> addCar) {
-        this.addCar = addCar;
+    public void addCar(Car car) {
+        cars.add(car);
     }
 }

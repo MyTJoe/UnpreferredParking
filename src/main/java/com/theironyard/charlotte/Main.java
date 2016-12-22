@@ -31,13 +31,22 @@ public class Main {
 
         Spark.get("/lot-info", (request, response) -> {
             System.out.println("Here is the lot info.");
-            return serializer.serialize(lotInfo);
+            return serializer.deep(true).serialize(lotInfo);
         });
 
         Spark.post("/park-car", (request, response) -> {
             System.out.println("Updating lot.");
-            Car addCar = parser.parse(request.body(), Car.class);
+            Car newCar = parser.parse(request.body(), Car.class);
 
+            for (Lot lot : lotInfo) {
+                if (lot.getId() == newCar.getLotId()) {
+                    if (newCar.getSize() <= lot.getCapacity() &&
+                            newCar.getMoney() >= lot.getRate() * newCar.getSize()) {
+                            lot.setCapacity(lot.getCapacity() - newCar.getSize());
+                        lot.addCar(newCar);
+                    }
+                }
+            }
             return "";
         });
     }

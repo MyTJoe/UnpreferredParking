@@ -4,15 +4,15 @@ public class Car {
     private String make;
     private String model;
     private int size;
-    private double money;
-    private int iD;
+    private int money;
+    private int lotId;
 
-    public Car(String make, String model, int size, double money, int iD) {
+    public Car(String make, String model, int size, int money, int iD) {
         this.make = make;
         this.model = model;
         this.size = size;
         this.money = money;
-        this.iD = iD;
+        this.lotId = iD;
     }
 
     public String getMake() {
@@ -39,19 +39,21 @@ public class Car {
         this.size = size;
     }
 
-    public double getMoney() {
+    public int getMoney() {
         return money;
     }
 
-    public void setMoney(double money) {
+    public void setMoney(int money) {
         this.money = money;
+
     }
 
-    public int getiD() {
-        return iD;
+    public int getLotId() {
+        return lotId;
     }
 
-    public void setiD(int iD) {
-        this.iD = iD;
+    public void setLotId(int lotId) {
+        this.lotId = lotId;
     }
 }
+
