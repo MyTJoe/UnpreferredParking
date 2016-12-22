@@ -46,4 +46,14 @@ public class Lot {
     public void addCar(Car car) {
         cars.add(car);
     }
+
+    @Override
+    public String toString() {
+        return "Lot{" +
+                "Id=" + Id +
+                ", capacity=" + capacity +
+                ", rate=" + rate +
+                ", cars=" + cars +
+                '}';
+    }
 }

@@ -14,6 +14,7 @@ public class Car {
         this.money = money;
         this.lotId = iD;
     }
+    public Car(){}
 
     public String getMake() {
         return make;

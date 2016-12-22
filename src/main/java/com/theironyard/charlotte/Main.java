@@ -1,5 +1,6 @@
 package com.theironyard.charlotte;
 
+
 import jodd.json.JsonParser;
 import jodd.json.JsonSerializer;
 import spark.Spark;
@@ -36,16 +37,22 @@ public class Main {
 
         Spark.post("/park-car", (request, response) -> {
             System.out.println("Updating lot.");
-            Car newCar = parser.parse(request.body(), Car.class);
+            try {
+                Car newCar = parser.parse(request.body(), Car.class);
 
-            for (Lot lot : lotInfo) {
-                if (lot.getId() == newCar.getLotId()) {
-                    if (newCar.getSize() <= lot.getCapacity() &&
-                            newCar.getMoney() >= lot.getRate() * newCar.getSize()) {
+                for (Lot lot : lotInfo) {
+                    if (lot.getId() == newCar.getLotId()) {
+                        if (newCar.getSize() <= lot.getCapacity() &&
+                                newCar.getMoney() >= lot.getRate() * newCar.getSize()) {
                             lot.setCapacity(lot.getCapacity() - newCar.getSize());
-                        lot.addCar(newCar);
+                            lot.addCar(newCar);
+                            System.out.println(lot.toString());
+                        }
                     }
                 }
+            }
+            catch (Exception Ex){
+                Ex.printStackTrace();
             }
             return "";
         });
